@@ -1,0 +1,1 @@
+D:\Small Projects\weather-app\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
