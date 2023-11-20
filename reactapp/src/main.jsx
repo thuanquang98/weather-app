@@ -7,17 +7,18 @@ import {
     RouterProvider
 } from 'react-router-dom';
 import ErrorPage from './Error.jsx'
+import 'bootstrap/dist/css/bootstrap.css'
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <App />,
-        errorElement: <ErrorPage/>
+        errorElement: <ErrorPage />
     }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <RouterProvider router={router}/>
-  </React.StrictMode>,
+        <RouterProvider router={router} />
+    </React.StrictMode>,
 )
