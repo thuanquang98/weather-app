@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #2B2B2B;
+    color: white;
+
+}
+
+.navContainer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-item:hover {
+    background-color: #555;
+}
+
+.navContainer a {
+    color: inherit;
+    padding: 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.contentContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: auto;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Forecasts from './Components/Forecasts';
-import Weathers from './Components/Weathers.jsx'
+import Navbar from './Components/Navbar.jsx';
 
 export default class App extends Component {
     static displayName = App.name;
@@ -8,6 +8,8 @@ export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = { forecasts: [], loading: true };
+        this.state.locations = ["Winnipeg, MB", "Toronto, ON", "Vancounver, BC"]
+        this.state.units = ["Celcius", "Fahrenheit"]
     }
 
     componentDidMount() {
@@ -27,9 +29,9 @@ export default class App extends Component {
 
         return (
             <div>
+                <Navbar locations={this.state.locations} />
                 <h1 id="tabelLabel" >Weather forecast</h1>
                 <p>This component demonstrates fetching data from the server.</p>
-                <Weathers />
                 {contents}
             </div>
         );
