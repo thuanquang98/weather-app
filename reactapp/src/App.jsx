@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Forecasts from './Components/Forecasts';
+import Weathers from './Components/Weathers.jsx'
 
 export default class App extends Component {
     static displayName = App.name;
@@ -28,6 +29,7 @@ export default class App extends Component {
             <div>
                 <h1 id="tabelLabel" >Weather forecast</h1>
                 <p>This component demonstrates fetching data from the server.</p>
+                <Weathers />
                 {contents}
             </div>
         );

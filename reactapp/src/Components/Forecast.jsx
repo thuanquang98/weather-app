@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
 
+//in the future, sets of data display for forecast
+/*
+    forecast {
+        tempHigh: int
+        tempLow: int
+        forecastDate: DATE format(weekday, day of month, month)
+        weatherSummary: string
+        weatherIcons: icon
+    }
+*/
+
+
 class Forecast extends Component {
 
     render() {
