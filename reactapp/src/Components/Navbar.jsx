@@ -11,7 +11,7 @@ export default function Navbar(props) {
         <ul>
           {props.locations.map(location => <li className="nav-item" key={location}><a href="">{location}</a></li>)}
         </ul>
-        <DropdownMenu />
+        <DropdownMenu units={props.units} />
       </div>
     </nav>
   )

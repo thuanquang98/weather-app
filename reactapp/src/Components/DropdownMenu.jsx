@@ -1,25 +1,30 @@
 import React, { Component } from 'react'
-import '../css/dropdown-menu.css'
-/**
- * isOpen: is the dropdownmenu opened? if yes, dropdownmenu visible
- * receive props.
- */
+import Dropdown from 'react-bootstrap/Dropdown'
 
 export default class DropdownMenu extends Component {
 
     constructor(props) {
         super(props);
+        this.state = { isOpen: false, units: ["°C", "°F"] };
+    }
+
+
+    setTempUnit = (unit) => {
+        return
     }
 
     render() {
         return (
-            <div className='dropdown-container'>
-                <input type="button" id="units" value="Units"></input>
-                <div className="dropdown-menu">
-                    <div className="dropdown-item">Celsius (°C)</div>
-                    <div className="dropdown-item">Fahrenheit (°F)</div>
-                </div>
-            </div>
+            <Dropdown>
+                <Dropdown.Toggle id=''>
+                    Units
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                    <Dropdown.Item href="#">Celsius (°C)</Dropdown.Item>
+                    <Dropdown.Item href="#">Fahrenheit (°F)</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
         )
     }
+
 }

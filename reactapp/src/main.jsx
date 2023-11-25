@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import ErrorPage from './Error.jsx'
 import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.bundle.js'
 
 const router = createBrowserRouter([
     {

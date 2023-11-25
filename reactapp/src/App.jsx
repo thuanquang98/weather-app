@@ -29,7 +29,7 @@ export default class App extends Component {
 
         return (
             <div>
-                <Navbar locations={this.state.locations} />
+                <Navbar locations={this.state.locations} units={this.state.units} />
                 <h1 id="tabelLabel" >Weather forecast</h1>
                 <p>This component demonstrates fetching data from the server.</p>
                 {contents}
