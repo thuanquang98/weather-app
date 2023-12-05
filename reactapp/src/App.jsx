@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Forecasts from './Components/Forecasts';
 import Navbar from './Components/Navbar.jsx';
+import HistoryBar from './Components/HistoryBar.jsx';
+import DropdownMenu from './Components/DropdownMenu.jsx';
+import Weather from './Components/Weather.jsx'
+import './css/weather-icons.css'
 
 export default class App extends Component {
     static displayName = App.name;
@@ -9,7 +13,6 @@ export default class App extends Component {
         super(props);
         this.state = { forecasts: [], loading: true };
         this.state.locations = ["Winnipeg, MB", "Toronto, ON", "Vancounver, BC"]
-        this.state.units = ["Celcius", "Fahrenheit"]
     }
 
     componentDidMount() {
@@ -29,9 +32,13 @@ export default class App extends Component {
 
         return (
             <div>
-                <Navbar locations={this.state.locations} units={this.state.units} />
+                <Navbar>
+                    <input type="text" placeholder='Enter location' />
+                    <HistoryBar locations={this.state.locations} />
+                    <DropdownMenu />
+                </Navbar>
                 <h1 id="tabelLabel" >Weather forecast</h1>
-                <p>This component demonstrates fetching data from the server.</p>
+                <Weather />
                 {contents}
             </div>
         );
