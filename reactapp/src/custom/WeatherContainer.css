@@ -1,0 +1,25 @@
+:root {
+    --weather-height: 400px;
+    --weather-width: 800px;
+}
+
+.weatherContainer {
+    position: relative;
+    width: var(--weather-width);
+    height: var(--weather-height);
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.temperatureContainer {
+    display: flex;
+    position: relative;
+}
+
+.currentTemperatureData {
+    display: flex;
+    justify-content: left;
+}

@@ -1,18 +1,6 @@
-/** Weather of current location
- *  location name: string
- *  temperature: int
- *  weather summary: string
- *  feels like: int 
- *  time of location
- *  air quality: unsigned int
- *  wind speed: unsigned int
- *  wind direction: unsigned int
- *  visibility: int 
- *  pressure: unsigned int
- *  dew point: int
- */
-
 import React, { Component } from 'react'
+import '../custom/weatherContainer.css'
+
 
 export default class Weather extends Component {
 
@@ -20,11 +8,14 @@ export default class Weather extends Component {
         super(props);
         this.state = {
             location: { city: "Winnipeg", country: "CA" },
-            temp: -5,
-            feels: -7,
-            air_quality: 1,
-            wind_speed: 13,
-            summary: "Why is it so goddam cold!?"
+            temp: -1,
+            feels: -2,
+            air_quality: -3,
+            wind: { speed: 41, direction: 42 },
+            summary: "Default description",
+            pressure: -5,
+            visibility: -6,
+            dew_point: -7
         }
         this.fetch = false;
     }
@@ -38,19 +29,27 @@ export default class Weather extends Component {
         }
     }
 
+    static getCurrentTime() {
+        const date = new Date();
+        return date.getHours() + ":" + date.getMinutes();
+    }
+
     render() {
         return (
             <div className='weatherContainer'>
-
-                <div id="overviewCurrentTemperature">
-                    <div className="locationContainer">
-
+                <div className="headerContainer">
+                    <div id="weatherLocation">{this.state.location.city + ", " + this.state.location.country}</div>
+                    <div className="currTimeContainer">{Weather.getCurrentTime()}</div>
+                </div>
+                <div className="summaryContainer">
+                    <div className="temperatureContainer">
+                        <div className="currentTemperatureData" style={{ fontSize: 10 + "rem" }}>{this.state.temp} </div>
+                        <span className='temperatureUnit' style={{ fontSize: 1 + "rem" }}>°C</span>
                     </div>
-                    <h1>{this.state.temp}</h1>
-                    <i className="wi wi-night-sleet" style={{ fontSize: 3 + "em" }}></i>
-                    <div className="summaryContainer">
-                        <h2 className='summaryCaption'>{this.state.summary}</h2>
-                    </div>
+                    <h4 className='summaryCaption'>{this.state.summary}</h4>
+                </div>
+                <div className="detailContainer">
+
                 </div>
             </div>
         )

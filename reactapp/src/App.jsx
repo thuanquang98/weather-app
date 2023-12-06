@@ -31,15 +31,16 @@ export default class App extends Component {
             : App.renderForecastsTable(this.state.forecasts);
 
         return (
-            <div>
+            <div className="backgroundContainer">
                 <Navbar>
                     <input type="text" placeholder='Enter location' />
                     <HistoryBar locations={this.state.locations} />
                     <DropdownMenu />
                 </Navbar>
-                <h1 id="tabelLabel" >Weather forecast</h1>
-                <Weather />
-                {contents}
+                <div >
+                    <h1 id="tabelLabel" >Weather forecast</h1>
+                    <Weather />
+                </div>
             </div>
         );
     }
